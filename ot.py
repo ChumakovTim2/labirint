@@ -24,9 +24,14 @@ pygame.draw.circle (screen, ('green'),(50,50), (20))
 while True:
     for event in pygame.event.get():
         print ('Event:', event.type)
+        if event.type == 200:
+            if event.key == pygame.K_RIGHT:
+                circle.move_ip(50,0)
+            if event.key == pygame.K_LEFT:
+                circle.move_ip(-50.0)
+            if event.type == pygame.QUIT:
+                running = False
+    pygame.display.flip()
 
-        if event.type == pygame.QUIT:
-            running = False
-        pygame.display.flip()
 
 
